@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Rate, Input, Button } from 'antd';
+import { Rate, Input, Button, Flex } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { addReview } from '../redux/slices/reviewSlice';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
@@ -71,9 +71,18 @@ const ReviewPage = () => {
         placeholder='Write your review...'
         style={{ marginTop: 20 }}
       />
-      <Button type='primary' onClick={submitReview} style={{ marginTop: 10 }}>
-        Submit
-      </Button>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <Button type='primary' onClick={submitReview} style={{ marginTop: 10 }}>
+          Submit
+        </Button>
+        <Button onClick={() => navigate('/books')}>Cancel</Button>
+      </div>
     </div>
   );
 };
