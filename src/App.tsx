@@ -18,14 +18,7 @@ const App: React.FC = () => {
             </ProtectedRoute>
           }
         />
-        <Route
-          path='/review/:id'
-          element={
-            <ProtectedRoute>
-              <ReviewPage />
-            </ProtectedRoute>
-          }
-        />
+        <Route path='/review/:id' element={<ReviewPage />} />
       </Routes>
     </Router>
   );
