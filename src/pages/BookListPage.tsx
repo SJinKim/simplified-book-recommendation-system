@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Input, Rate, Tooltip } from 'antd';
+import { Table, Input, Rate, Button } from 'antd';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -37,8 +37,25 @@ const BookListPage = () => {
       b.author.toLowerCase().includes(search.toLowerCase())
   );
 
+  const handleLogout = () => {
+    localStorage.clear(); // Clear all localStorage data
+    navigate('/'); // Navigate to the root route (LoginPage)
+  };
+
   return (
     <>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
+        <h1>Books</h1>
+        <Button danger onClick={handleLogout}>
+          Logout
+        </Button>
+      </div>
       <Input.Search
         placeholder='Search by title or author'
         onChange={(e) => setSearch(e.target.value)}
