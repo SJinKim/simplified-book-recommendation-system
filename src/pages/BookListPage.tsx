@@ -38,8 +38,9 @@ const BookListPage = () => {
   );
 
   const handleLogout = () => {
-    localStorage.clear(); // Clear all localStorage data
-    navigate('/'); // Navigate to the root route (LoginPage)
+    // localStorage.clear();
+    sessionStorage.clear();
+    navigate('/');
   };
 
   return (
