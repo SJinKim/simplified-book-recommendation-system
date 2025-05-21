@@ -47,12 +47,14 @@ Key technologies and tools used include:
    ├── src/
    │   ├── components/
    │   ├── pages/
-   │   ├── services/
    │   ├── redux/
+   │   ├── routes/
    │   ├── types/
    │   ├── App.tsx
    │   └── main.tsx
    ├── tsconfig.json
+   ├── webpack.config.js
+   ├── babel.config.js
    └── package.json
    ```
 
@@ -62,13 +64,16 @@ Key technologies and tools used include:
 
 ## Features
 
-- 🔐 **User Authentication**: Simple login page with localStorage/sessionStorage credential storage. Protected routing is implemented using router guards.
+- 🔐 **User Authentication**: 
+  - Simple login page with localStorage/sessionStorage credential storage. 
+  - Protected routing is implemented using router guards. 
+  - “Remember Me” functionality on login
 
 - 📚 **Book List Display**:
   - Fetched using the [Google Books API](https://www.googleapis.com/books/v1/volumes?q=subject:fiction)
-  - Tabular view with AG-Grid.
+  - Tabular view.
   - Dynamic search by title or author.
-  - Optional client-side pagination (20 items per page).
+  - Client-side pagination (items per page can be selected with a dropdown. initially 5).
 
 - ✍️ **Review and Rating System**:
   - Detailed book view on double-click.
@@ -77,22 +82,6 @@ Key technologies and tools used include:
 
 - 🧭 **Routing**:
   - Navigation handled via React Router.
-  - Each book has a unique detail view route.
-
-- 🧱 **Component Architecture**:
-  - Modularized React components.
-  - Clean and maintainable file structure.
 
 - 🎨 **Styling Options**:
-  - Material UI or Ant Design components recommended.
-  - Optional use of CSS preprocessors (SASS/LESS) to demonstrate advanced styling if styled-components are not used.
-
-- 💡 **Code Quality**:
-  - Full TypeScript support with strict type checking.
-  - Interfaces, types, and enums properly defined.
-  - Unused dependencies are removed for a clean build.
-
-- 🎁 **Optional Enhancements**:
-  - “Remember Me” functionality on login (optional).
-  - Smooth UI animations and transitions.
-  - Clean design with responsive layout.
+  - Ant Design.
